@@ -1,2 +1,2 @@
 # stepik---auto_test
-Automation testing Python
+Automation testing Python stepik
