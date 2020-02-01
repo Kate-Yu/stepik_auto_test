@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from locators import MainPageLocators
 from locators import ProductPageLocators
 
+
 class ProductPage(BasePage):
     def should_be_product_page(self):
             self.add_product()
@@ -13,6 +14,10 @@ class ProductPage(BasePage):
 
     def add_product(self):
         self.browser.find_element(*ProductPageLocators.PRODUCT_LINK).click(), "Button is not presented"
+
+    def should_be_product_in_basket(self):
+        #correct = self.is_element_present(*ProductPageLocators.MESSAGE), "Product is not added to basket"
+        assert self.browser.find_element(*ProductPageLocators.MESSAGE), "The shellcoder's handbook, £9.99"
 
     def should_item_name_match(self):
         item_name = self.browser.find_element(*ProductPageLocators.ITEM_NAME)
